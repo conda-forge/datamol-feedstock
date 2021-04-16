@@ -31,6 +31,8 @@ requirements:
     - selfies
     - tqdm
     - rdkit >=2020.09
+    - s3fs
+    - gcsfs
 
 test:
   imports:
