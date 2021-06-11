@@ -11,7 +11,7 @@ source:
   sha256: 05a3b968007377d0b27c1b42b57eb6fd8d4de0c1751adabd764c0747c14c3800
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -35,10 +35,17 @@ requirements:
     - gcsfs
 
 test:
+ requires:
+    - pytest >=6.0
+    - pytest-cov
+  source_files:
+    - tests/
+    - pyproject.toml
   imports:
     - datamol
   commands:
     - pip check
+    - pytest
   requires:
     - pip
 
