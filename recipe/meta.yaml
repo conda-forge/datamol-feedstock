@@ -35,7 +35,7 @@ requirements:
     - gcsfs
 
 test:
- requires:
+  requires:
     - pytest >=6.0
     - pytest-cov
   source_files:
