@@ -20,19 +20,23 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - fsspec >=0.8.0
-    - joblib
-    - loguru
-    - numpy
-    - pandas
-    - pillow
     - python >=3.7
-    - scipy
-    - selfies
+    - pip
     - tqdm
+    - loguru
+    - joblib
+    - fsspec >=2021.6
+
+    # Scientific
+    - pandas
+    - numpy
+    - scipy
+    - pillow
+    - matplotlib
+
+    # Chemistry
     - rdkit >=2020.09
-    - s3fs
-    - gcsfs
+    - selfies
 
 test:
   imports:
