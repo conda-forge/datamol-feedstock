@@ -1,5 +1,5 @@
 {% set name = "datamol" %}
-{% set version = "0.3.9" %}
+{% set version = "0.4.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
-  sha256: 05a3b968007377d0b27c1b42b57eb6fd8d4de0c1751adabd764c0747c14c3800
+  sha256: 44976010b956bc4989bcbd1e363d14fabf9028ba92f08048864b0309368751f9
 
 build:
   number: 0
@@ -20,19 +20,23 @@ requirements:
     - pip
     - python >=3.7
   run:
-    - fsspec >=0.8.0
-    - joblib
-    - loguru
-    - numpy
-    - pandas
-    - pillow
     - python >=3.7
-    - scipy
-    - selfies
+    - pip
     - tqdm
+    - loguru
+    - joblib
+    - fsspec >=2021.6
+
+    # Scientific
+    - pandas
+    - numpy
+    - scipy
+    - pillow
+    - matplotlib
+
+    # Chemistry
     - rdkit >=2020.09
-    - s3fs
-    - gcsfs
+    - selfies
 
 test:
   imports:
