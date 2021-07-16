@@ -11,7 +11,7 @@ source:
   sha256: 420128f49a6e98e9770a164bf49e80d3e34c375cef682b00ebbcf6f568c46388
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -32,7 +32,7 @@ requirements:
     - numpy
     - scipy
     - pillow
-    - matplotlib
+    - matplotlib-base
 
     # Chemistry
     - rdkit >=2020.09
