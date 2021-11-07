@@ -11,7 +11,7 @@ source:
   sha256: 25b84f3755818dff5865e776e71aafcfb9e71db0f18bf08a28e5c76d96800bad
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -25,6 +25,7 @@ requirements:
     - tqdm
     - loguru
     - joblib
+    - appdirs
     - fsspec >=2021.6
 
     # Scientific
