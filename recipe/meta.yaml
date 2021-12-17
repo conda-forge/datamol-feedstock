@@ -1,5 +1,5 @@
 {% set name = "datamol" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
-  sha256: 8a8af8c1743e78e2757d08fa827ea94c68fadec2466e2eb481234d506cf43ff2
+  sha256: f3b1ecc76787263d07dee54aa01e56769f412d7b57e067a3eabe03606b7b876d
 
 build:
   number: 0
@@ -34,6 +34,7 @@ requirements:
     - scipy
     - pillow
     - matplotlib-base
+    - scikit-learn
 
     # Chemistry
     - rdkit >=2020.09
