@@ -1,5 +1,5 @@
 {% set name = "datamol" %}
-{% set version = "0.6.5" %}
+{% set version = "0.6.6" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
-  sha256: 2216ebea855617e495a6e8857a8ebb200fc74da8db638e475e4f7abafff7c800
+  sha256: 1a69312b9c133646f94ffc422703af26a84851fa29dea53c4900dc2fb8b6de3e
 
 build:
   number: 0
@@ -26,7 +26,7 @@ requirements:
     - loguru
     - joblib
     - appdirs
-    - fsspec >=2021.6
+    - fsspec >=2021.9
 
     # Scientific
     - pandas
@@ -37,7 +37,7 @@ requirements:
     - scikit-learn
 
     # Chemistry
-    - rdkit >=2020.09
+    - rdkit >=2021.09
     - selfies
 
 test:
