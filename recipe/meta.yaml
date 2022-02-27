@@ -1,5 +1,5 @@
 {% set name = "datamol" %}
-{% set version = "0.6.7" %}
+{% set version = "0.6.8" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
-  sha256: 00b155c66303afeb32215df84541d5965ca89e5f8926a2a57af9bf1f261edb43
+  sha256: ee3bc26d9baa0a99f64a00127db4466c281abb3bc5c5e830f078864f39c95aec
 
 build:
   number: 0
