@@ -27,6 +27,7 @@ requirements:
     - joblib
     - appdirs
     - fsspec >=2021.9
+    - packaging
 
     # Scientific
     - pandas
