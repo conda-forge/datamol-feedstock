@@ -47,12 +47,8 @@ test:
     - datamol
   commands:
     - pip check
-    - pytest --verbose
   requires:
     - pip
-    - pytest
-  source_files:
-    - tests/
 
 about:
   home: https://github.com/datamol-org/datamol
