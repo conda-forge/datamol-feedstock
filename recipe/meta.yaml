@@ -1,5 +1,5 @@
 {% set name = "datamol" %}
-{% set version = "0.7.18" %}
+{% set version = "0.8.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
-  sha256: ad46f1d6f012dc7697215e11f304bbc7276e24b8f58db8b1c2f02da189e2b6df
+  sha256: 05158915af9051b54504f06b550ed81491eb8a392c4e7ef7b70d06736c1012ec
 
 build:
   number: 1000
@@ -38,17 +38,16 @@ requirements:
     - scikit-learn
 
     # Chemistry
-    - rdkit >=2021.09,<2022.09
+    - rdkit >=2021.09
     - selfies
 
 test:
   imports:
     - datamol
-  # disable because rdkit in setup.py is no detected
-  # commands:
-  #   - pip check
-  # requires:
-  #   - pip
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/datamol-org/datamol
