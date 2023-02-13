@@ -1,5 +1,5 @@
 {% set name = "datamol" %}
-{% set version = "0.8.8" %}
+{% set version = "0.9.0 %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
-  sha256: 1780d4c8faf55b68044539099effc45f7440f7ccc4a986c8805796e56802aa76
+  sha256: 6ca03ee025c457601aeae65c9b9cd96dece2854734678d5527c744020dae1128
 
 build:
   number: 0
@@ -25,9 +25,10 @@ requirements:
     - tqdm
     - loguru
     - joblib
-    - appdirs
+    - platformdirs
     - fsspec >=2021.9
     - packaging
+    - typing_extensions
 
     # Scientific
     - pandas
