@@ -1,11 +1,11 @@
-About datamol
-=============
-
-Home: https://github.com/datamol-org/datamol
-
-Package license: Apache-2.0
+About datamol-feedstock
+=======================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/datamol-feedstock/blob/main/LICENSE.txt)
+
+Home: https://github.com/datamol-io/datamol
+
+Package license: Apache-2.0
 
 Summary: A python library to work with molecules. Built on top of RDKit.
 
