@@ -29,6 +29,7 @@ requirements:
     - fsspec >=2021.9
     - packaging
     - typing_extensions
+    - importlib_resources
 
     # Scientific
     - pandas
