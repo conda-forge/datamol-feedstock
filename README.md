@@ -145,4 +145,5 @@ Feedstock Maintainers
 
 * [@hadim](https://github.com/hadim/)
 * [@maclandrol](https://github.com/maclandrol/)
+* [@zhu0619](https://github.com/zhu0619/)
 

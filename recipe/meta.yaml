@@ -7,21 +7,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
   sha256: 8f0c6f498d542b0c9182f685ba46860f0628ac4c0caa3b195923150641bdcc57
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools_scm
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - pip
     - tqdm
     - loguru
@@ -45,6 +45,8 @@ requirements:
     - selfies
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - datamol
 
