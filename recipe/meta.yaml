@@ -13,40 +13,46 @@ source:
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.8
-    - setuptools_scm
+    - setuptools >=77
+    - setuptools-scm >=8
   run:
-    - python >=3.8
-    - pip
-    - tqdm
-    - loguru
-    - joblib
-    - platformdirs
-    - fsspec >=2021.9
-    - packaging
-    - typing_extensions
-    - importlib_resources
-
-    # Scientific
-    - pandas
-    - numpy
-    - scipy
-    - pillow
-    - matplotlib-base
-    - scikit-learn
-
-    # Chemistry
-    - rdkit >=2021.09
-    - selfies
+    - python >={{ python_min }}
+    - tqdm >=4.66
+    - loguru >=0.7
+    - joblib >=1.3
+    - fsspec >=2023.9.2
+    - aiohttp
+    - pandas >=2.2
+    - numpy >=1.26
+    - scipy >=1.11
+    - platformdirs >=4
+    - scikit-learn >=1.4
+    - packaging >=23.2
+    - rdkit >=2024.9.1
+    - gcsfs >=2024.3
+    - s3fs >=2024.3
+    - openpyxl >=3.1
+    - xlsxwriter >=3.2
+    - pyarrow >=15
+    - matplotlib-base >=3.8
+    - networkx >=3.2
+    - nglview >=3.1
+    - pillow >=10
+    - selfies >=2.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - datamol
+  commands:
+    - python -c "import datamol as dm; assert dm.to_smiles(dm.to_mol('CCO')) == 'CCO'"
 
 about:
   home: https://github.com/datamol-io/datamol
