@@ -1,5 +1,6 @@
 {% set name = "datamol" %}
-{% set version = "0.12.5" %}
+{% set version = "0.13.0" %}
+{% set python_min = "3.11" %}
 
 
 package:
@@ -7,46 +8,52 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
-  sha256: 8f0c6f498d542b0c9182f685ba46860f0628ac4c0caa3b195923150641bdcc57
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/datamol-{{ version }}.tar.gz
+  sha256: 8f226040eff6cd1ac6c8e48e1297b2c10a505ee4808ec926aa73ae9bde68df9b
 
 build:
   number: 0
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.8
-    - setuptools_scm
+    - setuptools >=77
+    - setuptools-scm >=8
   run:
-    - python >=3.8
-    - pip
-    - tqdm
-    - loguru
-    - joblib
-    - platformdirs
-    - fsspec >=2021.9
-    - packaging
-    - typing_extensions
-    - importlib_resources
-
-    # Scientific
-    - pandas
-    - numpy
-    - scipy
-    - pillow
-    - matplotlib-base
-    - scikit-learn
-
-    # Chemistry
-    - rdkit >=2021.09
-    - selfies
+    - python >={{ python_min }}
+    - tqdm >=4.66
+    - loguru >=0.7
+    - joblib >=1.3
+    - fsspec >=2023.9.2
+    - aiohttp
+    - pandas >=2.2
+    - numpy >=1.26
+    - scipy >=1.11
+    - platformdirs >=4
+    - scikit-learn >=1.4
+    - packaging >=23.2
+    - rdkit >=2024.9.1
+    - gcsfs >=2024.3
+    - s3fs >=2024.3
+    - openpyxl >=3.1
+    - xlsxwriter >=3.2
+    - pyarrow >=15
+    - matplotlib-base >=3.8
+    - networkx >=3.2
+    - nglview >=3.1
+    - pillow >=10
+    - selfies >=2.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - datamol
+  commands:
+    - python -c "import datamol as dm; assert dm.to_smiles(dm.to_mol('CCO')) == 'CCO'"
 
 about:
   home: https://github.com/datamol-io/datamol
